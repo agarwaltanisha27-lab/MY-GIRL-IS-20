@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Birthday 🎁</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  text-align: center;
+}
+
+/* Lock Screen */
+#lockScreen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #ff9a9e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+}
+
+/* Main content */
+#mainContent {
+  display: none;
+  padding: 20px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.letter {
+  display: none;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔐 PASSWORD SCREEN -->
+<div id="lockScreen">
+  <h2>Enter Password 🔐</h2>
+  <input type="password" id="password" placeholder="Hint: annoying nickname">
+  <button onclick="checkPassword()">Unlock 💌</button>
+</div>
+
+<!-- 🎂 MAIN CONTENT -->
+<div id="mainContent">
+
+  <h1>🎉 Happy Birthday ❤️</h1>
+
+  <button onclick="showLetter()">Open Letter 💌</button>
+
+  <div class="letter" id="letter">
+    <p>
+      Dear Kanishka, <br><br>
+      You mean more than you probably realise.  
+      I hope this birthday brings you everything you dream of. Happy 20th birthday. I love you ✨  
+      <br><br>
+      Stay amazing always ❤️
+    </p>
+  </div>
+
+  <!-- 📸 GALLERY -->
+  <h2>Memories 📸</h2>
+  <div class="gallery">
+    <img src="https://drive.google.com/drive/folders/1j1PJetuMjfb2Q4PiU7k8oG3ExgF6_rQ-">
+  </div>
+
+  <!-- 🎶 SPOTIFY EMBED -->
+  <h2>Our Song 🎶</h2>
+  <iframe data-testid="embed-iframe" style="border-radius:12px" 
+src="https://open.spotify.com/embed/track/5bHDGWyIFML1LYXZWTD5MF?utm_source=generator" 
+width="100%" height="352" frameBorder="0" allowfullscreen="" 
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+</iframe>
+
+</div>
+
+<script>
+// 🔐 Password logic
+function checkPassword() {
+  const pass = document.getElementById("password").value;
+
+  if (pass === "kani") { // CHANGE THIS
+    document.getElementById("lockScreen").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
+  } else {
+    alert("Wrong password 😭");
+  }
+}
+
+// 💌 Letter toggle
+function showLetter() {
+  document.getElementById("letter").style.display = "block";
+}
+</script>
+
+</body>
+</html>
+
+
+
